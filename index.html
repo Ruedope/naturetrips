@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Beauty of Nature</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)),
+              url('https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg') no-repeat center center / cover;
+  background-attachment: fixed;
+  color: #e0e0e0;
+  line-height: 1.6;
+  padding: 0;
+}
+
+
+  header {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)),
+              url('https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg') no-repeat center center / cover;
+  background-attachment: fixed;
+  color: #e0e0e0;
+}
+
+
+    header h1 {
+      font-size: 3em;
+      color: #8bc34a;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #cfd8dc;
+    }
+
+    nav {
+      background-color: #0b1f1a;
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #aed581;
+      text-decoration: none;
+      margin: 10px 20px;
+      font-weight: 500;
+      transition: transform 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+      color: #dcedc8;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2em;
+      color: #aed581;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #b0bec5;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .image-grid img:hover {
+      transform: rotateY(10deg) scale(1.05);
+    }
+
+    .image-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 220px;
+  position: relative;
+}
+
+.image-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.image-card:hover .image-inner {
+  transform: rotateY(180deg);
+}
+
+.image-front, .image-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.image-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-back {
+  background-color: #263238;
+  color: #c5e1a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transform: rotateY(180deg);
+  font-size: 1.1em;
+}
+
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .video-grid video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      transition: transform 0.6s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .video-grid video:hover {
+      transform: perspective(800px) rotateX(10deg);
+    }
+
+    .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  perspective: 1000px; 
+}
+
+.video-card {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.video-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.video-card:hover .video-inner {
+  transform: rotateY(180deg);
+}
+
+.video-front, .video-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.video-front video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-back {
+  background-color: #263238;
+  color: #c5e1a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  transform: rotateY(180deg);
+  font-size: 1.2em;
+}
+
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #1e3c32;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    form h3 {
+      text-align: center;
+      color: #c5e1a5;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 10px;
+      color: #cfd8dc;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #263238;
+      color: #e0e0e0;
+    }
+
+    form button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #8bc34a;
+      color: #121212;
+      border: none;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #7cb342;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0b1f1a;
+      color: #789262;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+
+      .image-grid img,
+      .video-grid video {
+        height: auto;
+      }
+
+      nav a {
+        margin: 8px 12px;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>The Beauty of Nature</h1>
+    <p>Discover the serenity of nature through breathtaking images and calming videos.</p>
+  </header>
+
+  <nav>
+    <a href="#why">Why Nature</a>
+    <a href="#landscapes">Landscapes</a>
+    <a href="#videos">Videos</a>
+    <a href="#register">Register</a>
+  </nav>
+
+  <main>
+    <section id="why">
+      <h2>Why We Love Nature</h2>
+      <p>
+        Nature is our greatest teacher—offering peace, balance, and inspiration. From 
+        mountain peaks to flowing rivers, each view reminds us of Earth’s fragile beauty.
+      </p>
+    </section>
+
+    <section id="landscapes">
+      <h2>Peaceful Landscapes</h2>
+    <div class="image-grid">
+  <div class="image-card">
+    <div class="image-inner">
+      <div class="image-front">
+        <img src="https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg" alt="Beautiful mountain landscape">
+      </div>
+      <div class="image-back">
+        <h4>Mountain Majesty</h4>
+        <p>Snow-covered peaks rise above the clouds, reflecting nature’s raw power and stillness.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-card">
+    <div class="image-inner">
+      <div class="image-front">
+        <img src="https://images.pexels.com/photos/462118/pexels-photo-462118.jpeg" alt="Forest with sunlight">
+      </div>
+      <div class="image-back">
+        <h4>Sunlit Forest</h4>
+        <p>Golden sunlight filters through tall evergreens, illuminating the forest floor in warmth.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-card">
+    <div class="image-inner">
+      <div class="image-front">
+        <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg" alt="River flowing in nature">
+      </div>
+      <div class="image-back">
+        <h4>Peaceful River</h4>
+        <p>A gentle river flows steadily through lush meadows, echoing serenity and movement.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <p>Click any photo to view it in full size on Pexels.</p>
+    </section>
+
+    <section id="videos">
+  <h2>Nature in Motion</h2>
+  <div class="video-grid">
+
+  <div class="video-card">
+    <div class="video-inner">
+      <div class="video-front">
+        <video controls loop muted>
+          <source src="282995_small.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-back">
+        <h4>Forest Stream</h4>
+        <p>This peaceful video captures a slow-moving stream winding through a misty forest.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="video-inner">
+      <div class="video-front">
+        <video controls loop muted>
+          <source src="292827_small.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-back">
+        <h4>Sunset Over Lake</h4>
+        <p>A glowing sun sets behind the lake, painting the sky in hues of orange and purple.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  </div>
+  <p>Relax with these best captured moments of nature’s beauty in motion.</p>
+</section>
+
+
+    <section id="register">
+      <h2>Register for Nature Newsletter</h2>
+      <form>
+        <h3>Stay Connected</h3>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Why do you love nature?</label>
+        <textarea id="message" name="message" rows="4" placeholder="Share your thoughts..."></textarea>
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nature Showcase | Embrace the beauty around you.</p>
+  </footer>
+</body>
+</html>
