@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>5 JavaScript Interactives</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 40px;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #colorBox {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      background: lightblue;
+      border: 2px solid #333;
+    }
+    #counter {
+      font-size: 20px;
+      margin: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Interactives</h1>
+
+  <!-- 1. Alert Button -->
+  <button onclick="showMessage()">Click Me!</button>
+
+  <!-- 2. Change Background Color -->
+  <button onclick="changeColor()">Change Box Color</button>
+  <div id="colorBox"></div>
+
+  <!-- 3. Counter -->
+  <div>
+    <button onclick="increase()">+</button>
+    <span id="counter">0</span>
+    <button onclick="decrease()">-</button>
+  </div>
+
+  <!-- 4. Show/Hide Text -->
+  <button onclick="toggleText()">Show/Hide Text</button>
+  <p id="hiddenText" style="display:none;">Hello! You found me 🎉</p>
+
+  <!-- 5. Random Number Generator -->
+  <button onclick="randomNumber()">Generate Random Number</button>
+  <p id="randomResult"></p>
+
+  <script>
+    // 1. Alert Button
+    function showMessage() {
+      alert("Hello! You clicked the button.");
+    }
+
+    // 2. Change Box Color
+    function changeColor() {
+      const box = document.getElementById("colorBox");
+      const colors = ["red", "green", "blue", "orange", "purple", "pink"];
+      box.style.background = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    // 3. Counter
+    let count = 0;
+    function increase() {
+      count++;
+      document.getElementById("counter").textContent = count;
+    }
+    function decrease() {
+      count--;
+      document.getElementById("counter").textContent = count;
+    }
+
+    // 4. Show/Hide Text
+    function toggleText() {
+      const text = document.getElementById("hiddenText");
+      text.style.display = text.style.display === "none" ? "block" : "none";
+    }
+
+    // 5. Random Number Generator
+    function randomNumber() {
+      const num = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("randomResult").textContent = "Your number: " + num;
+    }
+  </script>
+
+</body>
+</html>
