@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Nature in Motion</h1></header>
+
+  <nav>
+    <a href="index.html">Why Nature</a>
+    <a href="landscapes.html">Landscapes</a>
+    <a href="videos.html">Videos</a>
+    <a href="contact.html">Contact</a>
+    <a href="jsdemo.html">Demo Game</a>
+   
+  </nav>
+
+  <main>
+  
+
+<section id="videos">
+  <h2>Video Gallery</h2>
+  <div class="video-grid">
+
+    <div class="video-card">
+      <video src="282995_small.mp4" controls muted></video>
+      <div class="video-info">
+        <h3>Forest Serenity</h3>
+        
+      </div>
+    </div>
+
+    <div class="video-card">
+      <video src="292827_small.mp4" controls muted></video>
+      <div class="video-info">
+        <h3>River Journey</h3>
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nature Showcase</p>
+  </footer>
+
+  <script>
+document.querySelectorAll(".video-grid video").forEach(video => {
+  video.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+});
+</script>
+
+
+</body>
+</html>
